@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
-	@user = User.find(params[:id])
+	#if (signed_in?)
+		@user = User.find(params[:id])
+	#else
+	#	flash[:error]="You must sign in to see this information"
+	#	redirect_to signin_path
+	#end
   end
   
   def new
